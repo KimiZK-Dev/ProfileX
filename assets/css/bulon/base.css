@@ -1,0 +1,10 @@
+html {
+	font-family: Satoshi, sans-serif;
+}
+
+body {
+	cursor: url("../cursor/default.cur"), default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}

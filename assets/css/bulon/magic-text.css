@@ -1,0 +1,44 @@
+@font-face {
+	font-family: "UVNVan_B";
+	src: url("../../fonts/UVNVan_B.TTF") format("truetype");
+}
+
+.magic-text {
+	font-family: "UVNVan_B", sans-serif;
+}
+
+h1 > .magic {
+	display: inline-block;
+	position: relative;
+}
+
+h1 > .magic > .magic-star {
+	--size: clamp(20px, 1.2vw, 20px);
+	animation: 0.7s forwards scales;
+	display: block;
+	height: var(--size);
+	left: var(--star-left);
+	position: absolute;
+	top: var(--star-top);
+	width: var(--size);
+}
+
+h1 > .magic > .magic-star > svg {
+	animation: 1s linear infinite rotate;
+	display: block;
+	opacity: 0.7;
+}
+
+h1 > .magic > .magic-star > svg > path {
+	fill: #673ab7;
+}
+
+h1 > .magic > .magic-text {
+	animation: 3s linear infinite background-pan;
+	background: linear-gradient(to right, #7b1fa2, #673ab7, #f48fb1, #7b1fa2);
+	background-size: 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+}

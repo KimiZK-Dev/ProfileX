@@ -1,0 +1,114 @@
+.pace,
+body.loading {
+	overflow: hidden;
+}
+
+.td-loading-v2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.td-loading-v2 img {
+	margin-right: 20px;
+	height: 85px;
+	width: 85px;
+	object-fit: cover;
+	border-radius: 15px;
+}
+
+.ws-loader-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.ws-loader-text span {
+	margin-top: 7px;
+	font-size: 14px;
+}
+
+.ws-loader-text h4 {
+	font-size: 1.25rem;
+	font-weight: bolder;
+}
+
+.icon-spin {
+	display: inline-block;
+	-webkit-animation: 2s linear infinite fa-spin;
+	animation: 2s linear infinite fa-spin;
+}
+
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-moz-user-select: none;
+	user-select: none;
+	z-index: 2000000000;
+	margin: auto;
+	top: 10px;
+	left: 0;
+	height: 8px;
+	border-radius: 8px;
+	width: 4rem;
+	background: #eaecf2;
+	border: 1px #e3e8f7;
+	position: fixed;
+	right: 0;
+}
+
+.pace .pace-progress {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	max-width: 200px;
+	position: absolute;
+	z-index: 2000;
+	display: block;
+	top: 0;
+	right: 100%;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	animation: 1.5s infinite gradient;
+	background-size: 200%;
+}
+
+.pace .pace-progress::before {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0.5rem;
+	content: attr(data-progress-text);
+	font-weight: 100;
+	font-size: 5rem;
+	line-height: 1;
+	text-align: right;
+	color: rgba(0, 0, 0, 0.19999999999999996);
+}
+
+.pace-inactive .pace-progress {
+	opacity: 0;
+	transition: 0.3s ease-in;
+}
+
+.pace.pace-inactive {
+	opacity: 0;
+	transition: 0.3s;
+	top: -8px;
+}

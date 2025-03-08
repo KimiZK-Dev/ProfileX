@@ -1,0 +1,47 @@
+/* Dark Mode */
+html.dark {
+	color-scheme: dark;
+	--scrollbar-bg: #2e2e2e;
+	--scrollbar-thumb-bg: #4e4e4e;
+}
+
+html.dark .td-loading-v2 {
+	background: #080c0f;
+}
+
+html.dark .ws-loader-text h4 {
+	color: #fff;
+}
+
+html.dark #real-time {
+	color: #ececec;
+}
+
+html.dark #toast-prompt {
+	box-shadow: 0px 0 10px rgba(0, 0, 0, 0.3);
+	background: rgb(53 53 53 / 50%);
+	color: #fff;
+}
+
+/* Light Mode */
+html:not(.dark) .td-loading-v2 {
+	background: #fff;
+}
+
+html:not(.dark) .ws-loader-text h4 {
+	color: #355192;
+}
+
+html:not(.dark) #real-time {
+	color: #1d1d1d;
+}
+
+html:not(.dark) #toast-prompt {
+	box-shadow: 0px 0 10px rgba(0, 0, 0, 0.3);
+	background: rgb(105 105 105 / 50%);
+	color: #ffffff;
+}
+
+html:not(.dark) .close-btn {
+	color: #eeeeee;
+}

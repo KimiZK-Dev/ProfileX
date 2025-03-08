@@ -1,0 +1,25 @@
+#fps,
+#nav.hide,
+.about-me .avatar-img,
+.crown,
+.crown2,
+.crown3,
+.jBox-wrapper,
+.running-cat,
+.td-btn_on_event,
+.td-lock-screen .infos .logo-ws,
+.td-lock-screen .infos .web_desc,
+.td-lock-screen .ri-arrow-down-line,
+.td-welcome {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+#nav.hide,
+.about-me-2,
+.icon-link {
+	user-select: none;
+}

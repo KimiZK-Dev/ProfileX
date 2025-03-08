@@ -1,0 +1,54 @@
+.mobile {
+	display: none;
+}
+
+.pc {
+	display: block;
+}
+
+@media (max-width: 768px) {
+	#real-time {
+		font-size: 1rem;
+	}
+
+	.mobile {
+		display: block;
+	}
+
+	.pc {
+		display: none;
+	}
+
+	#toast-prompt {
+		width: 90% !important;
+		left: 5% !important;
+		flex-direction: column !important;
+		padding: 16px !important;
+		line-height: 24px !important;
+	}
+
+	html.dark #toast-prompt {
+		background: rgb(36, 36, 36) !important;
+	}
+
+	html:not(.dark) #toast-prompt {
+		background: rgb(209, 209, 209) !important;
+	}
+
+	#toast-prompt img {
+		margin: 0 auto 10px !important;
+	}
+
+	.confirm-btn,
+	.close-btn {
+		margin: 5px 0 !important;
+		width: 100% !important;
+		text-align: center !important;
+	}
+}
+
+@media screen and (max-width: 789px) {
+	.__BodyStyle {
+		height: 78%;
+	}
+}
