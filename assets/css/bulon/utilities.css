@@ -11,15 +11,15 @@
 .td-lock-screen .infos .web_desc,
 .td-lock-screen .ri-arrow-down-line,
 .td-welcome {
-	-webkit-pointer-events: none;
-	pointer-events: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 #nav.hide,
 .about-me-2,
 .icon-link {
-	user-select: none;
+  user-select: none;
 }

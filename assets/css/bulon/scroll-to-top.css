@@ -1,13 +1,13 @@
 #croll-to-top .text,
 #croll-to-top:hover i {
-	display: block;
+  display: block;
 }
 
 #croll-to-top i,
 #croll-to-top:hover .text {
-	display: none;
+  display: none;
 }
 
 #croll-to-top {
-	z-index: 9999;
+  z-index: 9999;
 }

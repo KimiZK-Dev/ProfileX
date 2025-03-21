@@ -61,8 +61,7 @@
 	line-height: 1.3;
 	padding: 12px 10px;
 	will-change: transform;
-	box-shadow: 0 10px 15px -3px rgba(27, 27, 27, 0.1),
-		0 4px 6px -4px rgba(27, 27, 27, 0.1);
+	box-shadow: 0 10px 15px -3px rgba(27, 27, 27, 0.1), 0 4px 6px -4px rgba(27, 27, 27, 0.1);
 	color: #000;
 }
 .dark .fui-toast .fui-toast-box {
@@ -137,8 +136,7 @@
 	left: 16px;
 	top: 10px;
 	font-size: 18px;
-	animation: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s forwards
-		zoomInCenter;
+	animation: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s forwards zoomInCenter;
 }
 .fui-toast .fui-toast-icon .fui-loading-spinner {
 	width: 20px;

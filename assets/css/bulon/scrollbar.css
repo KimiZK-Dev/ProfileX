@@ -1,10 +1,10 @@
 :root {
-	--scrollbar-width: 6px;
-	--scrollbar-bg: #e0e0e0;
-	--scrollbar-thumb-bg: #c0c0c0;
+  --scrollbar-width: 6px;
+  --scrollbar-bg: #e0e0e0;
+  --scrollbar-thumb-bg: #c0c0c0;
 }
 
 body::-webkit-scrollbar {
-	height: 0;
-	width: 0 !important;
+  height: 0;
+  width: 0 !important;
 }

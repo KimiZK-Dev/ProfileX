@@ -96,13 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Gọi API để lấy audio từ link YouTube
       fetch(
         `https://api.zm.io.vn/v1/social/autolink?url=${encodeURIComponent(
-          url
-        )}&apikey=Gnacr`
+          url,
+        )}&apikey=Gnacr`,
       )
         .then((response) => {
           if (!response.ok) {
             throw new Error(
-              "API request failed with status: " + response.status
+              "API request failed with status: " + response.status,
             );
           }
           return response.json();
@@ -117,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Tìm formatId 251 trong medias
           const audioFormat = data.medias.find(
-            (media) => media.formatId === 251
+            (media) => media.formatId === 251,
           );
           if (!audioFormat) {
             throw new Error(
-              "Không tìm thấy định dạng audio 251 (opus 146kb/s)"
+              "Không tìm thấy định dạng audio 251 (opus 146kb/s)",
             );
           }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
               success: () => `Đang phát: ${data.title || "Audio từ YouTube"}`,
               error: "Có lỗi khi phát audio!",
             },
-            { isClose: true }
+            { isClose: true },
           );
         })
         .catch((error) => {
@@ -326,11 +326,11 @@ document.addEventListener("DOMContentLoaded", () => {
     animateStar(star) {
       star.style.setProperty(
         "--star-left",
-        `${randomUtils.randomRange(-10, 100)}%`
+        `${randomUtils.randomRange(-10, 100)}%`,
       );
       star.style.setProperty(
         "--star-top",
-        `${randomUtils.randomRange(-40, 80)}%`
+        `${randomUtils.randomRange(-40, 80)}%`,
       );
       star.style.animation = "none";
       star.offsetHeight; // Trigger reflow
@@ -341,10 +341,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const stars = document.getElementsByClassName("magic-star");
       let delay = 0;
       for (const star of stars) {
-        setTimeout(() => {
-          this.animateStar(star);
-          setInterval(() => this.animateStar(star), 1000);
-        }, delay++ * (1000 / 3));
+        setTimeout(
+          () => {
+            this.animateStar(star);
+            setInterval(() => this.animateStar(star), 1000);
+          },
+          delay++ * (1000 / 3),
+        );
       }
     },
   };
@@ -400,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let messageIndex = 0;
       $("body").click((event) => {
         const text = $(`<span style='font-family:sans-serif;'>`).text(
-          this.messages[messageIndex]
+          this.messages[messageIndex],
         );
         const color =
           this.colors[Math.floor(Math.random() * this.colors.length)];
@@ -417,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         $("body").append(text);
         text.animate({ top: event.pageY - 180, opacity: 0 }, 1500, () =>
-          text.remove()
+          text.remove(),
         );
       });
     },
@@ -567,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.element = $(".web_desc.text-center");
       if (!this.element.length) {
         console.error(
-          "Không tìm thấy phần tử .web_desc.text-center trong DOM khi khởi tạo!"
+          "Không tìm thấy phần tử .web_desc.text-center trong DOM khi khởi tạo!",
         );
         return;
       }
@@ -601,7 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
           $("#loading-percentage").text(percentage);
           progress.css(
             "transform",
-            `translate3d(${parseInt(percentage)}%, 0px, 0px)`
+            `translate3d(${parseInt(percentage)}%, 0px, 0px)`,
           );
           if (percentage === "100%") {
             $(".pace-active").animate({ top: "-100px" }, "slow", function () {
@@ -636,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
         0,
         0,
         30 * this.scale,
-        30 * this.scale
+        30 * this.scale,
       );
       ctx.restore();
     }
@@ -713,7 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
               x: (x, y) => x + 0.5 * (-0.5 + Math.random()) - 1.7,
               y: (x, y) => y + 1.5 + 0.7 * Math.random(),
               r: (r) => r + 0.03 * Math.random(),
-            }
+            },
           );
           sakura.draw(this.ctx);
           this.sakuraList.push(sakura);
@@ -820,6 +823,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(
     "%c WELCOME - %c THIS'S MY CONSOLE LOG",
     "color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;",
-    "color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;"
+    "color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;",
   );
 });
