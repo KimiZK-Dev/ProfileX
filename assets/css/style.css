@@ -43,5 +43,8 @@
 /* Popup Music */
 @import url("./bulon/popup-music.css");
 
+/* Payment Styles */
+@import url("./bulon/payment.css");
+
 /* Responsive Styles */
 @import url("./bulon/responsive.css");

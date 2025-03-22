@@ -30,11 +30,11 @@
 			name="theme-color" />
 		<meta
 			property="og:image"
-			content="./assets/thumnail.jpg" />
+			content="./assets/img/thumnail.jpg" />
 		<title>KimiZK - Profile</title>
 		<link
 			rel="shortcut icon"
-			href="./assets/img/iconweb.jpg"
+			href="./assets/img/icon/iconweb.jpg"
 			type="image/x-icon" />
 		<link
 			href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css"
@@ -67,7 +67,7 @@
 			<div class="td-loading-v2">
 				<img
 					class="loading2 none"
-					src="./assets/img/iconLoader.png"
+					src="./assets/img/icon/iconLoader.png"
 					alt="avatar loader 1" />
 				<div class="ws-loader-text">
 					<h4>Nguyễn Hữu Bách</h4>
@@ -130,7 +130,7 @@
 					<section class="animate flex flex-col items-center gap-y-7 show">
 						<div class="relative">
 							<img
-								src="./assets/img/avatar.jpg"
+								src="./assets/img/my-album/avatar.jpg"
 								alt="Avatar"
 								class="author-avatar rounded-full border p-1" />
 							<img
@@ -142,7 +142,7 @@
 								Nguyen Huu Bach
 								<img
 									class="blue-tick ml-2"
-									src="./assets/img/icon/tick.png" />
+									src="./assets/img/icon/verified.gif" />
 							</h1>
 							<p class="text-center">
 								Lời nói gió bay, hứa càng hay chia tay
@@ -185,33 +185,48 @@
 						<div class="text-xl font-semibold md:min-w-36">
 							<h2>Payment</h2>
 						</div>
-						<div
-							class="mb-5 w-full flex flex-col rounded-xl border border-border py-3 px-3 gap-y-3 sm:gap-y-4 text-nowrap">
-							<div class="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2 sm:gap-y-4">
-								<a class="group relative text-sm leading-normal no-underline hover:bg-transparent">
-									<div class="relative flex flex-row items-center gap-x-4 px-2 py-1.5 transition-all">
-										<div
-											class="absolute -inset-0 z-10 rounded-lg border border-border bg-muted opacity-0 transition-all group-hover:opacity-50"></div>
-										<img
-											src="./assets/img/icon/mbbank.png"
-											class="z-20 h-10 w-10 rounded-lg bg-muted p-2"
-											alt="MBBANK" />
-										<div class="z-20 flex flex-col">
-											<div class="font-medium">
-												NGUYEN HUU BACH
-												<i
-													data-ws-copy="NGUYEN HUU BACH"
-													class="ri-file-copy-line text-muted-foreground cursor-pointer"></i>
-											</div>
-											<div class="font-normal text-muted-foreground">
-												77030420088888
-												<i
-													data-ws-copy="77030420088888"
-													class="ri-file-copy-line cursor-pointer"></i>
-											</div>
+						<div class="mb-5 w-full rounded-xl border">
+							<div class="flex groupBanking">
+								<div class="bank-details">
+									<img
+										src="./assets/img/banking/mbbank.png"
+										class="iconBanking"
+										alt="MBBANK" />
+									<div class="bank-info">
+										<div class="top">
+											<p class="account-name">NGUYEN HUU BACH</p>
+											<i
+												data-ws-copy="NGUYEN HUU BACH"
+												class="ri-file-copy-line cursor-pointer"></i>
+										</div>
+										<div class="bot">
+											<p class="account-number">77030420088888</p>
+											<i
+												data-ws-copy="77030420088888"
+												class="ri-file-copy-line cursor-pointer"></i>
 										</div>
 									</div>
-								</a>
+								</div>
+								<div class="bank-details flex">
+									<img
+										src="./assets/img/banking/banking-comingsoon.png"
+										class="iconBanking"
+										alt="COMMING SOON" />
+									<div class="bank-info">
+										<div class="top">
+											<p class="account-name">COMING SOON</p>
+											<i
+												data-ws-copy="NGUYEN HUU BACH"
+												class="ri-file-copy-line cursor-pointer"></i>
+										</div>
+										<div class="bot">
+											<p class="account-number">************</p>
+											<i
+												data-ws-copy="************"
+												class="ri-file-copy-line cursor-pointer"></i>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -224,9 +239,9 @@
 								<a
 									class="group overflow-hidden relative flex flex-col gap-y-3 rounded-2xl border border-border bg-primary-foreground transition-all hover:border-foreground/25 hover:shadow-sm"
 									data-fancybox="gallery"
-									data-src="./assets/img/pic1.jpg">
+									data-src="./assets/img/my-album/pic1.jpg">
 									<img
-										src="./assets/img/pic1.jpg"
+										src="./assets/img/my-album/pic1.jpg"
 										alt="Img"
 										class="absolute top-0 h-full w-full object-cover" />
 									<div class="z-10 flex flex-col gap-y-0.5 px-5 pb-4 pt-24">
@@ -237,9 +252,9 @@
 								<a
 									class="group overflow-hidden relative flex flex-col gap-y-3 rounded-2xl border border-border bg-primary-foreground transition-all hover:border-foreground/25 hover:shadow-sm"
 									data-fancybox="gallery"
-									data-src="./assets/img/pic2.jpg">
+									data-src="./assets/img/my-album/pic2.jpg">
 									<img
-										src="./assets/img/pic2.jpg"
+										src="./assets/img/my-album/pic2.jpg"
 										alt="Img"
 										class="absolute top-0 h-full w-full object-cover" />
 									<div class="z-10 flex flex-col gap-y-0.5 px-5 pb-4 pt-24">
@@ -398,7 +413,7 @@
 				<div id="toast-prompt">
 					<div class="left-cont">
 						<img
-							src="./assets/img/aGMqekz.gif"
+							src="./assets/img/icon/vip2.gif"
 							width="32"
 							height="32" />
 						<p class="text-center">Bạn muốn nghe nhạc ngay trên trang không?</p>

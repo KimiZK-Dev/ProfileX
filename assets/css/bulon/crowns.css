@@ -1,26 +1,26 @@
 .author-avatar {
-  width: 153px;
-  height: 153px;
-  object-fit: cover;
+	width: 153px;
+	height: 153px;
+	object-fit: cover;
 }
 
 .crown,
 .crown2,
 .crown3 {
-  position: absolute;
-  left: 0;
-  width: 130%;
-  height: auto;
+	position: absolute;
+	left: 0;
+	width: 130%;
+	height: auto;
 }
 
 .crown3 {
-  top: 0;
-  transform: scale(1.15);
+	top: 0;
+	transform: scale(1.15);
 }
 
 .blue-tick {
-  pointer-events: none;
-  width: 18px;
-  height: auto;
-  margin-top: 2px;
+	pointer-events: none;
+	width: 20px;
+	height: auto;
+	margin-top: 2px;
 }

@@ -6,6 +6,17 @@
 	display: block;
 }
 
+@media (max-width: 320px) {
+	.bank-info {
+		font-size: 12px;
+	}
+
+	.iconBanking {
+		width: 40px;
+		height: 40px;
+	}
+}
+
 @media (max-width: 768px) {
 	#real-time {
 		font-size: 1rem;
@@ -17,6 +28,10 @@
 
 	.pc {
 		display: none;
+	}
+
+	.bank-details {
+		width: 100%; /* Chuyển thành 1 cột khi responsive */
 	}
 
 	#toast-prompt {

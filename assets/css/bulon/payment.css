@@ -1,0 +1,75 @@
+.groupBanking {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 8px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.bank-details {
+	display: flex;
+	align-items: center;
+	padding: 8px 15px;
+	font-size: 13.5px;
+	font-weight: 100;
+	border-radius: 10px;
+	background: transparent;
+	transition: all 0.2s ease;
+	width: calc(50% - 0.5rem); /* 50% chiều rộng trừ đi nửa gap để có 2 thẻ mỗi hàng */
+	box-sizing: border-box;
+	min-width: 0;
+}
+
+.iconBanking {
+	width: 45px;
+	height: 45px;
+	object-fit: cover;
+	padding: 5px;
+	border: 1px solid #3a3a3a;
+	border-radius: 10px;
+	flex-shrink: 0;
+}
+
+.bank-info {
+	margin-left: 10px;
+	min-width: 0;
+	flex: 1;
+}
+
+.bank-info .top,
+.bank-info .bot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+/* .account-number {
+	color: #ffffffa9;
+} */
+.bank-info .account-name,
+.bank-info .account-number {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	flex: 1;
+	padding-right: 5px;
+}
+
+.bank-info i {
+	margin-left: 5px;
+	flex-shrink: 0;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.bank-info i:hover {
+	color: #283593;
+}
+
+.bank-details:hover {
+	background: #ffffff0e;
+}
