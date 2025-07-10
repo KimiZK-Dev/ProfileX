@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		playYouTubeAudio(url) {
 			console.log("Bắt đầu xử lý link YouTube:", url);
 
-			// Gọi API để lấy audio từ link YouTube
-			fetch(`https://api.zm.io.vn/v1/social/autolink?url=${encodeURIComponent(url)}&apikey=Gnacr`)
+			// Gọi API để lấy danh sách media từ link YouTube
+			fetch(`https://trongthao.tech/api/youtube?url=${encodeURIComponent(url)}`)
 				.then((response) => {
 					if (!response.ok) {
 						throw new Error("API request failed with status: " + response.status);
@@ -101,53 +101,73 @@ document.addEventListener("DOMContentLoaded", () => {
 					return response.json();
 				})
 				.then((data) => {
-					console.log("Dữ liệu từ API:", data);
+					console.log("Dữ liệu từ API YouTube:", data);
 
 					// Kiểm tra nếu có lỗi trong response
 					if (data.error) {
 						throw new Error("API returned an error: " + data.error);
 					}
 
-					// Tìm formatId 251 trong medias
-					const audioFormat = data.medias.find((media) => media.formatId === 251);
+					// Tìm định dạng audio trong mediaItems (ưu tiên 128K, fallback 48K)
+					const audioFormat =
+						data.api.mediaItems.find((media) => media.type === "Audio" && media.mediaQuality === "128K") ||
+						data.mediaItems.find((media) => media.type === "Audio" && media.mediaQuality === "48K");
+
 					if (!audioFormat) {
-						throw new Error("Không tìm thấy định dạng audio 251 (opus 146kb/s)");
+						throw new Error("Không tìm thấy định dạng audio phù hợp (128K hoặc 48K)");
 					}
 
-					console.log("Định dạng audio 251 tìm thấy:", audioFormat);
+					console.log("Định dạng audio tìm thấy:", audioFormat);
 
-					const audioUrl = audioFormat.url;
-					console.log("URL audio sẽ phát:", audioUrl);
+					// Gọi API thứ hai để lấy fileUrl từ mediaUrl
+					return fetch(audioFormat.mediaUrl)
+						.then((response) => {
+							if (!response.ok) {
+								throw new Error("Media URL request failed with status: " + response.status);
+							}
+							return response.json();
+						})
+						.then((mediaData) => {
+							console.log("Dữ liệu từ mediaUrl:", mediaData);
 
-					const audio = new Audio(audioUrl);
+							if (!mediaData.fileUrl) {
+								throw new Error("Không tìm thấy fileUrl trong dữ liệu media");
+							}
 
-					const playPromise = new Promise((resolve, reject) => {
-						audio
-							.play()
-							.then(() => {
-								console.log("Audio bắt đầu phát thành công");
-								resolve(data);
-							})
-							.catch((error) => {
-								console.error("Lỗi khi phát audio:", error);
-								reject("Không thể phát audio: " + error.message);
+							const audioUrl = mediaData.fileUrl;
+							console.log("URL audio sẽ phát:", audioUrl);
+
+							const audio = new Audio(audioUrl);
+
+							const playPromise = new Promise((resolve, reject) => {
+								audio
+									.play()
+									.then(() => {
+										console.log("Audio bắt đầu phát thành công");
+										resolve(data);
+									})
+									.catch((error) => {
+										console.error("Lỗi khi phát audio:", error);
+										reject("Không thể phát audio: " + error.message);
+									});
+
+								audio.addEventListener("ended", () => {
+									console.log("Audio đã kết thúc phát");
+									resolve("Audio đã kết thúc.");
+								});
 							});
 
-						audio.addEventListener("ended", () => {
-							console.log("Audio đã kết thúc phát");
-							resolve("Audio đã kết thúc.");
+							FuiToast.promise(
+								playPromise,
+								{
+									loading: "Đang xử lý và tải audio...",
+									success: () =>
+										`Đang phát: ${data.api.title || mediaData.fileName || "Audio từ YouTube"}`,
+									error: "Có lỗi khi phát audio!",
+								},
+								{ isClose: true }
+							);
 						});
-					});
-
-					FuiToast.promise(
-						playPromise,
-						{
-							loading: "Đang xử lý và tải audio...",
-							success: () => `Đang phát: ${data.title || "Audio từ YouTube"}`,
-							error: "Có lỗi khi phát audio!",
-						},
-						{ isClose: true }
-					);
 				})
 				.catch((error) => {
 					console.error("Lỗi tổng thể khi xử lý link YouTube:", error);
